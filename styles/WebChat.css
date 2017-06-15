@@ -1,0 +1,1132 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+[unselectable=on] {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+[contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    color: #999999;
+    display: block; /* For Firefox */
+}
+
+[contenteditable=true]:focus:before {
+    content: "";
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+body {
+    overflow: hidden;
+    background-color: #D4D4D4;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-family: "Segoe UI", 微軟正黑體, "Microsoft JhengHei", Arial, 新細明體 !important;
+}
+
+a {
+    color: #009d42;
+}
+
+.Link {
+    color: #808080;
+    text-decoration: none;
+    font-family: 微軟正黑體,微软雅黑;
+}
+
+    .Link[href] {
+        color: #2080E0;
+    }
+
+label[action] {
+    color: #2080E0;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*控制bootstrap開始*/
+.navbar-header {
+    height: 83px;
+    border-bottom: none;
+    border-top: none;
+    background-color: #4B576C;
+}
+
+/*上方選單開始*/
+.navbar-default .navbar-text {
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-size: 13px;
+    border: #fff 1px solid;
+    border-radius: 12px 12px 12px 12px;
+    margin-top: 2px;
+    height: 30px;
+}
+
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+40,05abe0+100;Blue+3D+%23+16 */
+        background: #87e0fd; /* Old browsers */
+        background: -moz-linear-gradient(top, #87e0fd 0%, #53cbf1 40%, #05abe0 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); /* IE6-9 */
+    }
+
+#nvbarTitle {
+    color: #FFFFFF;
+    font-size: 21px;
+    margin-bottom: 0;
+    margin-left: 15px;
+    margin-top: 5px;
+    height: 42px;
+}
+
+.navbar-subbrand {
+    margin: 0 0 0 30px;
+    clear: left;
+    font-size: 16px;
+    color: #818EA6;
+}
+
+#SurveyButton {
+    color: #1b5183;
+    height: 30px;
+    padding: 3px 5px 5px 5px;
+    text-align: center;
+    display: block;
+}
+
+    #SurveyButton:hover {
+        color: #fff;
+    }
+
+#AttentionButton {
+    color: #1b5183;
+    height: 30px;
+    padding: 3px 5px 5px 5px;
+    text-align: center;
+}
+
+    #AttentionButton:hover {
+        color: #fff;
+    }
+
+#HelpButton {
+    color: #1b5183;
+    height: 30px;
+    padding: 3px 5px 5px 5px;
+    text-align: center;
+}
+
+    #HelpButton:hover {
+        color: #fff;
+    }
+
+#HotQuestionButton {
+    color: #1b5183;
+    height: 30px;
+    padding: 3px 5px 5px 5px;
+    text-align: center;
+}
+
+    #HotQuestionButton:hover {
+        color: #fff;
+    }
+
+#OnlineLeaveButton {
+    color: #1b5183;
+    height: 30px;
+    padding: 3px 5px 5px 5px;
+    text-align: center;
+}
+
+    #OnlineLeaveButton:hover {
+        color: #fff;
+    }
+
+#ExitButton {
+    color: #1b5183;
+    height: 30px;
+    padding: 3px 5px 5px 5px;
+    text-align: center;
+}
+
+    #ExitButton:hover {
+        color: #fff;
+    }
+
+#navbar-toggle {
+    background-color: #288eaf;
+    float: right;
+    height: 30px;
+    width: 40px;
+    margin: 10px 8px 0px 0px;
+    border: #ffffff 2px solid;
+    border-radius: 5px;
+    display: block;
+    background-image: url(../image/smenu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    #navbar-toggle:hover {
+        background-color: #a5e4f8;
+        background-image: url(../image/smenu.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+/*上方選單結束*/
+/*改到bootstrap.min.css的檔案註記，刪除navbar上方的線條，下方為原始
+.navbar-static-top{z-index:1000;border-width:0 0 1px}
+.navbar-fixed-top{top:0;border-width:0 0 1px}
+.navbar-form{border-color:#e7e7e7}
+*/
+/*控制bootstrap結束*/
+
+#TopZone {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 94px;
+    background-color: #ffffff;
+    /*
+	border-bottom		: 1px solid #B50D0E;
+	background-image	: linear-gradient(top, #FF5356, #E43D40);
+	background-image	: -ms-linear-gradient(top, #FF5356, #E43D40);
+	background-image	: -moz-linear-gradient(top, #FF5356, #E43D40);
+	background-image	: -webkit-linear-gradient(top, #FF5356, #E43D40);
+	*/
+}
+
+#LeftZone {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 83px;
+    bottom: 0px;
+    border: 0px solid #B4B4B4;
+    /*width               : 27%;*/
+}
+
+.RightZone {
+    display: none;
+}
+
+#icn_balloon {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAABLUlEQVRIx82XzwoBQRzH9wHcPAC1Nx6AsxtP4aJIKe5urh5hUzyDi5SDWvLnIIlSDotETsh1fEe/kTbtrs2a2fo09eu3+/s0OzvzW00zUppHYiAPDNAHG3AGFxo3FDcoL+bluYwxzS0pBEpgDJgPxnR/yK9EGRx9FrdzApVvJHRg/qi4HZOe7yiRBveABAR3qvNRIhtwcTtZu4T+ZwGB/i4xkiQxEhIJSQKCBJdoSpZocQnLLbHYqTFxHa/nV3x2WL3i9WHDMdcBi0vcJEvclJGwJK+J5+toqbAwlfhEldislNm2lTjABJk/HOVrquPa1AwClMh9095VqC37tcQORP00upMAZKog7EXinTgoUEvfA1OwAEsapxQXLX+Spr4N5mBLvwZ8JvagCyJc4gG3Y4mxro8dKAAAAABJRU5ErkJggg==) no-repeat 0 6px;
+    display: inline-block;
+    height: 100%;
+    width: 33px;
+    margin: 0 8px 0 10px;
+    position: absolute;
+}
+
+#Title {
+    background-repeat: no-repeat;
+    background-position: 0px 11px;
+    /*padding-left		: 45px;*/
+    color: #000000;
+    font-family: 微軟正黑體;
+    font-size: 24px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    left: 50px;
+}
+
+.TopButtonZone {
+    position: absolute;
+    height: 23px;
+    right: 16px;
+    top: 8px;
+}
+
+.TopButton {
+    border: 2px solid #009D42;
+    border-radius: 12px;
+    height: 23px;
+    min-width: 23px;
+    line-height: 19px;
+    color: #009D42;
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana;
+    margin-left: 10px;
+    cursor: default;
+    float: right;
+}
+
+
+    .TopButton:hover {
+        background-color: #009D42;
+        color: #FFFFFF;
+    }
+
+#HintZone {
+    background-color: #e0e0e0;
+    padding: 16px 50px 16px 16px;
+}
+
+#HintClose {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    font-family: Arial;
+    font-size: 28px;
+    line-height: 16px;
+    cursor: default;
+}
+
+    #HintClose:hover {
+        color: #89CB23;
+    }
+
+#ChatZone {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    background-color: #384150;
+}
+
+#MessageList {
+    background-color: #EBEFF5;
+    border-bottom: none;
+    border-top: none;
+    position: absolute;
+    top: 0px;
+    bottom: 135px !important;
+    width: 100%;
+    overflow: auto;
+    padding: 6px 10px;
+    z-index: 100;
+}
+
+#Editor {
+    margin-top: 0px !important;
+    height: 100px;
+    width: 100% !important;
+    line-height: 40px;
+    border-right: none;
+    display: inline-block;
+    outline: none;
+    padding: 10px 74px 10px 10px;
+    line-height: 18px;
+    text-align: left;
+    direction: inherit;
+    border: 0;
+    background-color: #EBEFF5;
+    border-top: 1px solid #C0C9DB;
+}
+
+.EditorZone {
+    position: absolute;
+    bottom: 0px;
+    height: 135px;
+    width: 100%;
+    text-align: right;
+    background: #DDE3EE;
+    border-top: 1px solid #C0C9DB;
+}
+
+.ButtonZone {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 44px;
+    padding-top: 6px;
+}
+
+.LeftButtonZone {
+    position: absolute;
+}
+
+.RightButtonZone {
+    position: absolute;
+    right: 0px;
+}
+
+.LeftButtonZone > div {
+    float: left;
+    margin-left: 10px;
+}
+
+.RightButtonZone > div {
+    float: right;
+    margin-right: 10px;
+}
+
+.Button {
+    border: 0px solid #CFCFCF;
+    background-image: linear-gradient(top, #FDFDFD, #E2E2E2);
+    background-image: -ms-linear-gradient(top, #FDFDFD, #E2E2E2);
+    background-image: -moz-linear-gradient(top, #FDFDFD, #E2E2E2);
+    background-image: -webkit-linear-gradient(top, #FDFDFD, #E2E2E2);
+    height: 28px;
+    line-height: 26px;
+    border-radius: 3px;
+    text-align: center;
+    vertical-align: top;
+    cursor: default;
+    padding: 0px 20px;
+    display: inline-block;
+}
+
+.IconButton {
+    width: 33px;
+    padding: 0px;
+}
+
+    .IconButton > div {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+.ButtonDisabled > div {
+    opacity: 0.5;
+}
+
+#ApplyAgentButton {
+    background-repeat: no-repeat;
+    display: inline-block;
+    /*display             : none!important;*/
+    height: 40px;
+    width: 50%;
+    margin-top: 13px;
+    vertical-align: top;
+    float: left;
+    text-align: center;
+    /*border       		: 1px solid #ff6c00;*/
+    /*cursor 				: pointer;*/
+}
+
+#TopButton {
+    background-color: #4B576C;
+    background-repeat: no-repeat;
+    float: left;
+    /*display             : none!important;*/
+    height: 35px;
+    width: 50%;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+    color: #a9b3c5;
+    padding-top: 8px;
+    border-right: 1px solid #586271;
+}
+
+    #TopButton:hover {
+        background-color: #4b5567;
+        color: #c6d0e2;
+    }
+
+
+#BackButton {
+    background-color: #4B576C;
+    background-repeat: no-repeat;
+    float: left;
+    /*display             : none!important;*/
+    height: 35px;
+    width: 50%;
+    vertical-align: top;
+    text-align: center;
+    /*float                : right;*/
+    cursor: pointer;
+    color: #a9b3c5;
+    padding-top: 8px;
+}
+
+    #BackButton:hover {
+        background-color: #4b5567;
+        color: #c6d0e2;
+    }
+
+#AttachmentButton {
+    background-image: url(../image/Attachment.png);
+    /*background-image	: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAABpElEQVRYw+2YvU7DMBDHUxGSBcGLUHiKTFkCJCxlyCOwZmGt2hXGziykycijIMRAJZjKBgttBjhLZ8m92m3sfIHU4TfU6d3/X3/Ud7GCx2tLggNcAvfAK7AAfgz4Ap4wT4R51/RkBs6AF0PRbbC855tM7AGjhsQpI9RbM0ENfAAJ0AdcxbJtw8X4BPNRIysmQvKFKXBkKKyC5UuJTshNsM3yJjzIgF7NBjg9/IFc653pswcDsgSHDRngsPxzQfOKDT4IAzcayWyctQLI8XPZ2ETQTNnATBg41Ujkk/X1NGL7QtyMDXwLAzqnICYmAo1YR4hbWCSR1ZKJFd2diX9lwsZTEEuYkNghGqF4iuNb2kRW04WVVzFR1GSiqGIi/wszYeOaytZ6SGInir3jV90TmwhIbNzFEd2ZaMTEp+EtWsXEAb1Fnw3rCY+Y8DViT2g9UaWyyvGPKKtaWYk15ryrGpNW29OWq22XP4w66jsi2oGNFR3YMbBvKOxgvKwDG6t60duWetE7VS/KuWi4Kw/LvBrg0zjANWTvJ5aGokuMTzGf9P3ELy6q7q01sL6lAAAAAElFTkSuQmCC);*/
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 39px;
+    width: 38px;
+    background-position: center;
+    vertical-align: top;
+    float: left;
+    border-right: 1px solid #C0C9DB;
+    border-radius: 0px;
+    /*cursor 				: pointer;*/
+}
+
+#ImageButton {
+    background-image: url(../image/Image.png);
+    /*background-image	: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAABpElEQVRYw+2YvU7DMBDHUxGSBcGLUHiKTFkCJCxlyCOwZmGt2hXGziykycijIMRAJZjKBgttBjhLZ8m92m3sfIHU4TfU6d3/X3/Ud7GCx2tLggNcAvfAK7AAfgz4Ap4wT4R51/RkBs6AF0PRbbC855tM7AGjhsQpI9RbM0ENfAAJ0AdcxbJtw8X4BPNRIysmQvKFKXBkKKyC5UuJTshNsM3yJjzIgF7NBjg9/IFc653pswcDsgSHDRngsPxzQfOKDT4IAzcayWyctQLI8XPZ2ETQTNnATBg41Ujkk/X1NGL7QtyMDXwLAzqnICYmAo1YR4hbWCSR1ZKJFd2diX9lwsZTEEuYkNghGqF4iuNb2kRW04WVVzFR1GSiqGIi/wszYeOaytZ6SGInir3jV90TmwhIbNzFEd2ZaMTEp+EtWsXEAb1Fnw3rCY+Y8DViT2g9UaWyyvGPKKtaWYk15ryrGpNW29OWq22XP4w66jsi2oGNFR3YMbBvKOxgvKwDG6t60duWetE7VS/KuWi4Kw/LvBrg0zjANWTvJ5aGokuMTzGf9P3ELy6q7q01sL6lAAAAAElFTkSuQmCC);*/
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 40px;
+    width: 33px;
+    vertical-align: top;
+    /*cursor 				: pointer;*/
+}
+
+.SendButtonDisabled {
+    background: #CACACA !important;
+    border: 2px solid #CACACA !important;
+    cursor: default !important;
+}
+
+#SendButton,
+#SendButton:active {
+    border-left: none;
+    border-top-left-radius: 20;
+    border-bottom-left-radius: 20;
+    color: #e9e9ea;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "微軟正黑體", Arial, "Arial Black";
+    height: 32px;
+    width: 32px;
+    margin-left: 8px;
+    margin-top: 8px !important;
+    vertical-align: top;
+    text-align: center;
+    display: inline-block;
+    z-index: 2;
+    right: 6px;
+    position: absolute;
+    bottom: 4px;
+    background-image: url(../image/send.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -106px;
+    overflow: hidden;
+}
+
+    #SendButton:hover {
+        background-image: url(../image/send_Over.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+/*
+#SendButton
+{
+	border				: 1px solid #F8A900;	
+	background-image	: linear-gradient(top, #FFDF60, #FFC360);
+	background-image	: -ms-linear-gradient(top, #FFDF60, #FFC360);
+	background-image	: -moz-linear-gradient(top, #FFDF60, #FFC360);
+	background-image	: -webkit-linear-gradient(top, #FFDF60, #FFC360);
+}
+
+#SendButton:hover
+{
+	background-image	: linear-gradient(top, #FFE995, #FFD289);
+	background-image	: -ms-linear-gradient(top, #FFE995, #FFD289);
+	background-image	: -moz-linear-gradient(top, #FFE995, #FFD289);
+	background-image	: -webkit-linear-gradient(top, #FFE995, #FFD289);
+}
+
+#SendButton:active
+{
+	background-image	: linear-gradient(top, #FFC360, #FFDF60);
+	background-image	: -ms-linear-gradient(top, #FFC360, #FFDF60);
+	background-image	: -moz-linear-gradient(top, #FFC360, #FFDF60);
+	background-image	: -webkit-linear-gradient(top, #FFC360, #FFDF60);
+}
+*/
+
+.Button:hover {
+    background-image: linear-gradient(top, #F9F9F9, #EEEEEE);
+    background-image: -ms-linear-gradient(top, #F9F9F9, #EEEEEE);
+    background-image: -moz-linear-gradient(top, #F9F9F9, #EEEEEE);
+    background-image: -webkit-linear-gradient(top, #F9F9F9, #EEEEEE);
+    cursor: pointer;
+}
+
+.Button:active {
+    background-image: linear-gradient(top, #E2E2E2, #FDFDFD);
+    background-image: -ms-linear-gradient(top, #E2E2E2, #FDFDFD);
+    background-image: -moz-linear-gradient(top, #E2E2E2, #FDFDFD);
+    background-image: -webkit-linear-gradient(top, #E2E2E2, #FDFDFD);
+}
+
+.ButtonDisabled /*,
+.ButtonDisabled:hover,
+.ButtonDisabled:active*/ {
+    background-image: none !important;
+    cursor: default !important;
+    display: none !important;
+}
+
+.ChatSystemMessage {
+    width: 100%;
+    text-align: center;
+    color: #999999;
+    margin: 5px 0px;
+    font-size: 13px;
+}
+
+/*-- Chat AD Message --*/
+
+.ActivityMessage {
+    width: 400px;
+    text-align: center;
+    margin: 5px auto;
+    background-color: #FFF4E8;
+    border: 1px solid #FFD0C0;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+    .ActivityMessage img {
+        width: 100%;
+        border: 1px solid #FFE8D8;
+    }
+
+.TextActivityMessage {
+    width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+    .ActivityMessage div,
+    .TextActivityMessage div {
+        display: inline-block;
+        text-align: left;
+    }
+
+/*-- Normal Chat Message --*/
+
+.ChatMessage {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    margin: 5px 0px;
+}
+
+.ChatMessageLeft {
+    padding: 0px 15px 0px 48px;
+}
+
+.ChatMessageRight {
+    padding: 0px 48px 0px 15px;
+    text-align: right;
+}
+
+.ChatMessageContent {
+    text-align: left;
+}
+
+.ChatMessageAvatar {
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 0px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #D0D0D0;
+    border-radius: 21px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.ChatMessageLeft .ChatMessageAvatar {
+    left: 0px;
+}
+
+.ChatMessageRight .ChatMessageAvatar {
+    right: 0px;
+}
+
+.ChatMessageAvatarChativr {
+    /*background-image	: url(../image/qbichat.gif);*/
+    background-image: url(../image/zenny.png);
+    background-size: contain;
+}
+
+.ChatMessageAvatarTextivr {
+    /*background-image	: url(../image/qbichat.gif);*/
+    background-image: url(../image/zenny.png);
+    background-size: contain;
+}
+
+.ChatMessageAvatarRobot {
+    background-image: url(../image/zenny.png);
+    background-size: contain;
+}
+
+.ChatMessageAvatarAgent {
+    background-image: url(../image/csc_m.jpg);
+    background-size: 41px 41px;
+}
+
+.ChatMessageAvatarUser {
+    background-image: url(../image/user.jpg);
+    background-size: 41px 41px;
+}
+
+/*-- ChatMessageContent --*/
+
+.ChatMessageContent {
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.ChatMessageLeft .ChatMessageContent {
+    background-color: #ffffff;
+}
+
+/*.ChatMessageLeft .ChatMessageContent:hover
+{
+	border				: 2px solid #d2f0f9;
+	background-color	: #ffffff;
+}*/
+
+.ChatMessageRight .ChatMessageContent {
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    vertical-align: top;
+}
+
+    .ChatMessageRight .ChatMessageContent:hover {
+        border: 1px solid #f8fffd;
+        background-color: #f8fffd;
+        vertical-align: top;
+    }
+
+/*-- ChatMessageTextContent --*/
+
+.ChatMessageTextContent {
+    padding: 11px 8px;
+    font-size: 14px;
+    line-height: 18px;
+    min-width: 20px;
+    min-height: 42px;
+    max-width: 90%;
+    text-align: left;
+    word-wrap: break-word;
+    direction: inherit;
+}
+
+    .ChatMessageTextContent a {
+        word-wrap: break-word;
+        /*word-break: break-all;*/
+    }
+
+.ChatMessageTextContentIW {
+    padding: 11px 8px;
+    font-size: 14px;
+    line-height: 18px;
+    min-width: 20px;
+    min-height: 42px;
+    max-width: 90%;
+    text-align: right;
+    word-wrap: break-word;
+    direction: rtl;
+}
+
+    .ChatMessageTextContentIW a {
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+.ChatMessageIcon {
+    display: none;
+}
+
+.ChatMessageFailed .ChatMessageIcon {
+    background-image: url(../image/MessageSendFailed.png);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    margin: 13px 6px 6px 0px;
+}
+
+.ChatMessageTime {
+    color: #999999;
+    font-family: Verdana, Arial;
+    font-size: 12px;
+    padding-top: 2px;
+}
+
+.ChatMessageLink {
+    color: #0050A0;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*-- ChatMessageFileContent --*/
+
+.ChatMessageFileContent {
+    width: 260px;
+    line-height: 20px;
+}
+
+.ChatMessageFileContentTop {
+    border-bottom: 1px solid #D3D3D3;
+    position: relative;
+    padding: 6px 6px 4px 50px;
+}
+
+.ChatMessageFileContentBottom {
+    padding: 3px 10px;
+    text-align: right;
+}
+
+.ChatMessageFileContentIcon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 10px;
+    top: 9px;
+    background-image: url(../image/FileTypeUnknown.png);
+}
+
+.ChatMessageFileContentIconExcel {
+    background-image: url(../image/FileTypeExcel.png);
+}
+
+.ChatMessageFileContentIconExe {
+    background-image: url(../image/FileTypeExe.png);
+}
+
+.ChatMessageFileContentIconImage {
+    background-image: url(../image/FileTypeImage.png);
+}
+
+.ChatMessageFileContentIconPpt {
+    background-image: url(../image/FileTypePpt.png);
+}
+
+.ChatMessageFileContentIconText {
+    background-image: url(../image/FileTypeText.png);
+}
+
+.ChatMessageFileContentIconWord {
+    background-image: url(../image/FileTypeWord.png);
+}
+
+.ChatMessageFileContentIconZip {
+    background-image: url(../image/FileTypeZip.png);
+}
+
+.ChatMessageFileContentName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ChatMessageFileContentInfo {
+    color: #808080;
+}
+
+.ChatMessageFileContentStatus {
+    padding-left: 16px;
+}
+
+/*-- ChatMessageImageContent --*/
+
+.ChatMessageImageContent {
+    padding: 6px;
+    line-height: 0px;
+    max-width: 70%;
+}
+
+    .ChatMessageImageContent img {
+        border: 1px solid #EEEEEE;
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+.ChatMessageImageContentMask {
+    width: 100%;
+    height: 100%;
+}
+
+/* for jQuery UI */
+
+.ui-button {
+    outline: none;
+}
+
+/* for dialogs */
+
+.DialogContent {
+    font-size: 14px;
+}
+
+.DialogInfo {
+    padding-bottom: 10px;
+}
+
+/*Ext Web*/
+#ifExtWeb {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+}
+
+/*Ext P4 Web Page*/
+#dvP4Page {
+    /*background-color: black;*/
+    /*opacity: 0.9;*/
+    display: none;
+    left: 0px;
+    top: 83px;
+    bottom: 0px;
+    right: 0px;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    z-index: 101;
+}
+
+#ifP4Url {
+    border: 0px;
+    display: block;
+    -webkit-transform-origin: 0 0;
+    margin: 0 auto;
+     background-color :  #fff;
+}
+
+#dvP4PageTitle {
+    display: block;
+    color: #ffffff;
+    width: 100%;
+    height: 30px;
+    text-align: right;
+    font-size: 22px;
+    font-family: Arial;
+    background-color :  #fff;
+}
+
+#btnP4PageClose {
+    color: #000000;
+    cursor: pointer;
+}
+
+#imgP4 {
+    float: right;
+    width: 100%;
+    height: 100%;
+    background: url(../image/cover-photo.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+    #imgP4 .imgP4text {
+        padding: 0.1px;
+        width: 100%;
+        text-align: center;
+        padding-top: 102px;
+    }
+
+        #imgP4 .imgP4text > p {
+            color: white;
+            font-size: 3em;
+            font-family: "Segoe UI", 微軟正黑體, "Microsoft JhengHei", Arial, 新細明體;
+            margin: 12px 0 12px;
+            line-height: 42px;
+        }
+
+        #imgP4 .imgP4text .subtitle {
+            font-size: 1.5em;
+        }
+
+#btn-recommendation {
+    height: 39px;
+    padding: 10px;
+    cursor: pointer;
+    float: right;
+    right: 70px;
+    position: absolute;
+}
+
+    #btn-recommendation span {
+        font-size: 12px;
+        color: #8c99af;
+    }
+
+.recommendation {
+    width: 185px;
+    max-width: 185px;
+    bottom: 141px;
+    right: 26px;
+    position: absolute;
+}
+
+.modal-popup {
+    /*background: #fff;
+    border: 1px solid #dce3ef;*/
+    position: absolute;
+    z-index: 100;
+    /*-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);*/
+    background: #dde3ee;
+    width: auto;
+    position: relative;
+    bottom: 0;
+    right: 2px;
+    float: right;
+    border: 0;
+}
+
+    .modal-popup .pop-head {
+        height: 30px;
+        padding: 0 10px;
+        border-bottom: 1px solid #dce3ef;
+        background: #ebeff5;
+        display: none;
+    }
+
+        .modal-popup .pop-head .pop-h-title {
+            font-size: 0.875em;
+            color: #4b576c;
+            line-height: 30px;
+            float: left;
+        }
+
+        .modal-popup .pop-head button {
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            border:0px;
+        }
+
+.close-btn:hover {
+    background: url(../image/close_Over.png) center center no-repeat;
+}
+
+.close-btn {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    background: url(../image/close.png) center center no-repeat;
+}
+
+.modal-popup .pop-content {
+    /*padding: 10px;*/
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+    /*right: 40px;*/
+    padding: 10px 0 0;
+    right: 2px;
+}
+
+    .modal-popup .pop-content ol {
+        font-size: 0.75em;
+        color: #4b576c;
+        line-height: 24px;
+        list-style-position: inside;
+        margin: 0;
+        padding-left: 12px;
+    }
+
+        .modal-popup .pop-content ol li {
+            line-height: 20px;
+            cursor: pointer;
+            margin-right: 8px;
+            width: 20px;
+				    height: 20px;
+				    display: inline-block;
+				    overflow: hidden;
+        }
+
+        	.modal-popup .pop-content ol li:first-child{
+	          background: url(../image/good.png) no-repeat;
+	        }
+
+	        .modal-popup .pop-content ol li:hover:first-child{
+	          background: url(../image/good_hover.png) no-repeat;
+	        }
+
+	        .modal-popup .pop-content ol li:nth-child(2){
+	          background: url(../image/bad.png) no-repeat;
+	        }
+
+	        .modal-popup .pop-content ol li:hover:nth-child(2){
+	          background: url(../image/bad_hover.png) no-repeat;
+	        }
+
+	        .modal-popup .pop-content ol li:nth-child(3){
+	          background: url(../image/mail.png) no-repeat;
+	        }
+
+	        .modal-popup .pop-content ol li:hover:nth-child(3){
+	          background: url(../image/mail_hover.png) no-repeat;
+	        }
+
+	        .modal-popup .pop-content ol li a,.modal-popup .pop-content ol li a:link,.modal-popup .pop-content ol li a:hover,.modal-popup .pop-content ol li a:active,.modal-popup .pop-content ol li a:visited{    
+	        	color: transparent;
+                display: block;
+                height: 20px;
+	        }
+
+            .modal-popup .pop-content ol li.feedback-active:first-child{
+                background: url(../image/good_hover.png) no-repeat;
+            }
+
+            .modal-popup .pop-content ol li.feedback-active:nth-child(2){
+                background: url(../image/bad_hover.png) no-repeat;
+            }
+
+.modal-popup .btm-aarow {
+    width: 19px;
+    height: 13px;
+    background: url(../image/pop-arrow.png) 0 0 no-repeat;
+    position: absolute;
+    right: 18px;
+    display: none;
+}
+
+.active {
+    display: block !important; 
+}
+
+.active.ButtonDisabled{
+	display: none !important; 
+}
+
+#Mail_modal {
+    font-size: 16px;
+}
+
+#TopButton.ButtonDisabled ~ #lx-recommendation{
+	display: block!important;
+}
+
+.pop-content a,.pop-content a:focus{
+    outline: none!important;
+}
+
+#Mail_Confirm {
+        background: url(../image/MailConfirm.png) center center no-repeat;
+        background-color: #337abc;
+        width: 54px;
+        height: 34px;
+}
+
+#Mail_Cancel {
+        background: url(../image/Mailcancel.png) center center no-repeat;
+         width: 54px;
+        height: 34px;
+}
+

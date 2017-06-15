@@ -1,0 +1,78 @@
+body
+{
+}
+
+#ChainseaWceButton
+{
+	position			: fixed;
+	bottom				: 0px;
+	right				: 15px;
+	width				: 120px;
+	height				: 33px;
+	border				: 1px solid #BAAA51;
+	border-bottom		: none;
+	background-color	: rgba(240,220,110,0.8);
+	text-align			: center;
+	line-height			: 30px;
+	font-size			: 14px;
+	font-family			: Arial,sans-serif;
+	cursor				: pointer;
+	color				: #000000;
+	opacity				: 0.75;
+}
+
+#ChainseaWcePane
+{
+	position			: fixed;
+	left				: 10%;
+	top					: 6%;
+	right				: 10%;
+	bottom				: 6%;
+	padding				: 30px 6px 6px 6px;
+	background-color	: #F3DA6A;
+	cursor				: default;
+	box-sizing			: border-box;
+	resize				: both;
+	border				: 1px solid #BAAA51;
+}
+
+.ChainseaWceTitle
+{
+	position			: absolute;
+	top					: 0px;
+	left				: 0px;
+	width				: 100%;
+	height				: 30px;
+	line-height			: 30px;
+	color				: #000000;
+	font-size			: 16px;
+	font-family			: Arial,sans-serif,Tahoma,Verdana,微软雅黑;
+	text-align			: center;
+}
+
+.ChainseaWceCloseButton
+{
+	position			: absolute;
+	top					: 0px;
+	right				: 6px;
+	height				: 25px;
+	width				: 50px;
+	background-color	: #C75050;
+	background-repeat	: no-repeat;
+	background-position	: center center;
+	background-image	: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAQMAAADeqkRuAAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAB5JREFUCNdjePCAofAAg3UDgzwDAx8DkASygSJAcQBm0welRg1/ZwAAAABJRU5ErkJggg==);
+}
+
+.ChainseaWceFrameContainer
+{
+	border				: 1px solid #CFBD5A;
+	box-sizing			: border-box;
+	width				: 100%;
+	height				: 100%;
+}
+
+#ChainseaWceFrame
+{
+	width				: 100%;
+	height				: 100%;
+}

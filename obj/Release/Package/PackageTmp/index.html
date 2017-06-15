@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>WebChat</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+
+    <script>
+        var clientData = {
+            "urlArgs": {
+                "fromTitle": getParameterByName("fromTitle"),
+                "fromUrl": getParameterByName("fromUrl"),
+                "serverSystemTypeOfWebPage": "TextIVR",
+                "from": getParameterByName("from") == "" ? "web" : getParameterByName("from"),
+                "language": getParameterByName("language") == "" ? "zh-tw" : getParameterByName("language"),
+                "country": getParameterByName("country") == "" ? "tw" : getParameterByName("country"),
+                "treeId": getParameterByName("treeId") == "" ? "001" : getParameterByName("treeId"),
+                "rootTreeId": getParameterByName("rootTreeId") == "" ? null : getParameterByName("rootTreeId"),
+            },
+            "isDevelopMode": false,
+            "toolBarJson": {
+                "left": [],
+                "right": []
+            },
+            "pageId": "14d2b9bc-ea00-445a-945d-c88c326a978e",
+            "language": "zh-tw",
+            "pageCode": "Gw.WebChat.Dialog"
+        };
+
+        function getParameterByName(name) {
+            url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }//<--Henry Modified @2016/3/2
+
+    </script>
+
+    <script src="./lib/jquery/jquery-1.11.3.js"></script>
+    <script src="./lib/jquery-ui-1.11.4/jquery-ui.js"></script>
+    <script src="./lib/jquery-file-upload-9.7.2/js/jquery.fileupload.js"></script>
+    <script src="./lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/jocket.js"></script>
+    <script src="./common/Constant.js"></script>
+    <script src="./common/Util.js"></script>
+    <script src="./common/File.js"></script>
+    <script src="./common/WebChat.js"></script>
+    <script src="./common/TextResource.js"></script>
+    <script src="./common/LeaveWord.js"></script>
+    <script src="./common/ServiceGroupSelect.js"></script>
+    <script src="./common/Survey.js"></script>
+    <script src="./common/LinkAction.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="./styles/WebChat.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/jquery-ui-1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/jquery-file-upload-9.7.2/css/jquery.fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/Bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/LeaveWord.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/ServiceGroupSelect.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/Survey.css" />
+
+
+</head>
+<body onbeforeunload="WebChat.stopChat()">
+    <div id=Left>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!--<button type="button" id="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>-->
+                    <p class="navbar-brand" id="nvbarTitle">nvbarTitle</p>               
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <!--<li class="active"><a href="#">設定</a></li>-->
+                        <li><a href="#" id="SurveyButton"></a></li>
+                        <li><a href="#" id="AttentionButton"></a></li>
+                        <li><a href="#" id="HelpButton"></a></li>
+                        <li><a href="#" id="HotQuestionButton"></a></li>
+                        <!--style="display:none"-->
+                        <li><a href="#" action="LeaveWord" id="OnlineLeaveButton"></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" id="ExitButton"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       <div id=LeftZone>
+            <div id=ChatZone>
+                <div id=MessageList></div>
+
+                <div Class=EditorZone id=EditorZone>
+                    <div id=ApplyAgentButton class="ButtonDisabled"></div>
+                    <div id=ImageButton class="Button IconButton ButtonDisabled"></div>
+                    <div id=TopButton></div>
+                    <div id=BackButton></div>
+                    <div id=AttachmentButton class="Button IconButton ButtonDisabled"></div>
+
+                    <textarea id=Editor value=""></textarea>
+                    <div id=SendButton></div>
+            </div>
+         
+         </div>
+        </div>
+        <!--<div class=RightZone></div>-->
+
+        <div id="dvP4Page">
+            <div id="dvP4PageTitle"><span id="btnP4PageClose">X</span>&nbsp;</div>
+            <iframe id="ifP4Url" src=""></iframe>
+        </div>
+
+
+    </div>
+    <input id=fileupload type=file name=file>
+    <input id=imageupload type=file name=file accept="image/*">
+    <form action="https://account.asus.com/signin.aspx" class="form-horizontal no_account login_account" method="post" target="_parent">
+        <input type="hidden" name="lang" value="zh-tw" />
+        <input type="hidden" name="site" value="tw" />
+        <input type="hidden" name="AppID" value="wechat0001" />
+        <input type="hidden" name="ReturnURL" id="ReturnURL" />
+        <input id="btn_login_asus" name="btn_login_asus" type="submit" value="會員登入" style="display:none;" />
+    </form>
+    <script>
+        WebChat.ajax({
+            url: WebChat.CRMGatewayUrl + "openapi/web/message/getparameter",
+            data: { parameterCode: "GwLeaveWord" },
+            async: false,
+            error: "SurveyErrorMessage",
+            success: function (ret) {
+                if (ret.parameterText == "true") {
+                    document.getElementById("OnlineLeaveButton").style.display = "null";//顯示
+                } else {
+                    document.getElementById("OnlineLeaveButton").style.display = "none";//隐藏
+                }
+
+            }
+        });
+
+    </script>
+</body>
+</html>

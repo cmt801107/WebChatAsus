@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AsusWebChat</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+    <script src="./lib/jquery/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/AsusDemo.css" />
+    <style type="text/css">
+        body {
+            background-image: url(image/AsusDemo/IW/Asus_background_IW.png);
+        }
+
+        #computer {
+            background-image: url(image/AsusDemo/IW/pc.png);
+        }
+
+            #computer:hover {
+                background-image: url(image/AsusDemo/IW/pc2.png);
+            }
+
+        #phone {
+            background-image: url(image/AsusDemo/IW/phone.png);
+        }
+
+            #phone:hover {
+                background-image: url(image/AsusDemo/IW/phone2.png);
+            }
+
+        #pad {
+            background-image: url(image/AsusDemo/IW/pad.png);
+        }
+
+            #pad:hover {
+                background-image: url(image/AsusDemo/IW/pad2.png);
+            }
+
+
+        #notebook {
+            background-image: url(image/AsusDemo/IW/notebook.png);
+        }
+
+            #notebook:hover {
+                background-image: url(image/AsusDemo/IW/notebook2.png);
+            }
+    </style>
+</head>
+<body>
+    <div id="computer" class="icon" onclick="window.open('https://icr-tw.asus.com/webchat/icr.html?rootTreeId=001.008.001&treeId=001.008.001.001&tenantId=IW_IL&language=IW')"></div>
+    <div id="phone" class="icon" onclick="window.open('https://icr-tw.asus.com/webchat/icr.html?rootTreeId=001.008.001&treeId=001.008.001.002&tenantId=IW_IL&language=IW')"></div>
+    <div id="pad" class="icon" onclick="window.open('https://icr-tw.asus.com/webchat/icr.html?rootTreeId=001.008.001&treeId=001.008.001.003&tenantId=IW_IL&language=IW')"></div>
+    <div id="notebook" class="icon" onclick="window.open('https://icr-tw.asus.com/webchat/icr.html?rootTreeId=001.008.001&treeId=001.008.001.004&tenantId=IW_IL&language=IW')"></div>
+
+    <script>
+        setButtonPosition()
+        function setButtonPosition() {
+            var Translation = 0;
+            if (parseInt($(window).width()) != 1425) {
+                Translation = (parseInt($(window).width()) - 1425) / 2;
+                $("#computer").css("left", Translation + 885);
+                $("#phone").css("left", Translation + 1088);
+                $("#pad").css("left", Translation + 885);
+                $("#notebook").css("left", Translation + 1088);
+            }
+        }
+
+        $(window).on('resize', function () {
+            setButtonPosition()
+        });
+    </script>
+</body>
+
+</html>

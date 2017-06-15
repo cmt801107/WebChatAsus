@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+    <script src="./lib/jquery/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/WebChat.css" />
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NJRLM8');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+
+<body style="margin: 0; overflow: hidden">
+    <div id="imgP4">
+        <div class="imgP4text">
+            <p class="title">歡迎使用華碩線上客服櫃台</p>
+            <p class="subtitle">提供您最佳的線上服務體驗</p>
+        </div>
+    </div>
+       <script type="text/javascript" src="WebChatEntryRWD.js"></script>
+
+        <script>
+        if (window.innerWidth <= 512) {
+            $('#imgP4').css("display", "none");
+        }
+        else
+            $('#imgP4').css("display", "block");
+
+        $("#imgP4").css("width", parseInt($(window).width()) - 380);
+        $(window).on('resize', function () { $("#imgP4").css("width", parseInt($(window).width()) - 380); });
+      </script>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJRLM8"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+</body>
+</html>

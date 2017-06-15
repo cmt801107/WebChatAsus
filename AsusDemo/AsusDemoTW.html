@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AsusWebChat</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+    <script src="./lib/jquery/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/AsusDemo.css" />
+    <style type="text/css">
+        body {background-image: url(image/AsusDemo/TW/Asus_background_TW.png);}
+          #computer {
+            background-image: url(image/AsusDemo/TW/pc.png);
+        }
+
+            #computer:hover {
+                background-image: url(image/AsusDemo/TW/pc2.png);
+            }
+
+        #phone {
+            background-image: url(image/AsusDemo/TW/phone.png);
+        }
+
+            #phone:hover {
+                background-image: url(image/AsusDemo/TW/phone2.png);
+            }
+
+        #pad {
+            background-image: url(image/AsusDemo/TW/pad.png);
+        }
+
+            #pad:hover {
+                background-image: url(image/AsusDemo/TW/pad2.png);
+            }
+
+
+        #notebook {
+            background-image: url(image/AsusDemo/TW/notebook.png);          
+        }
+
+            #notebook:hover {
+                background-image: url(image/AsusDemo/TW/notebook2.png);
+            }
+    </style> 
+</head>
+<body>
+    <div id="computer" class="icon" onclick="window.open('https://icr-tw.asus.com/webchat/icr.html?rootTreeId=001.001.001&treeId=001.001.001.001&tenantId=ZH-TW')"></div>
+    <div id="phone" class="icon" onclick="window.open('https://icr-tw.asus.com/webchat/icr.html?rootTreeId=001.001.001&treeId=001.001.001.002&tenantId=ZH-TW')"></div>
+    <div id="pad"  class="icon" onclick="window.open('https://icr-tw.asus.com/webchat/icr.html?rootTreeId=001.001.001&treeId=001.001.001.003&tenantId=ZH-TW')"></div>
+    <div id="notebook"  class="icon" onclick="window.open('https://icr-tw.asus.com/webchat/icr.html?rootTreeId=001.001.001&treeId=001.001.001.004&tenantId=ZH-TW')"></div>
+
+    <script>
+        setButtonPosition()
+        function setButtonPosition() {
+            var Translation = 0;
+            if (parseInt($(window).width()) != 1425) {
+                Translation = (parseInt($(window).width()) - 1425) / 2;
+                $("#computer").css("left", Translation + 122);
+                $("#phone").css("left", Translation + 325);
+                $("#pad").css("left", Translation + 122);
+                $("#notebook").css("left", Translation + 325);
+            }
+        }
+
+        $(window).on('resize', function () {
+            setButtonPosition()
+        });
+    </script>
+</body>
+
+</html>

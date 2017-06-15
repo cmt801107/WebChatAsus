@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>WebChat</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NJRLM8');</script>
+    <!-- End Google Tag Manager -->
+    <script>
+        var clientData = {
+            "urlArgs": {
+                "fromTitle": getParameterByName("fromTitle"),
+                "fromUrl": getParameterByName("fromUrl"),
+                "serverSystemTypeOfWebPage": "TextIVR",
+                "from": getParameterByName("from") == "" ? "web" : getParameterByName("from"),
+                "language": getParameterByName("language") == "" ? "zh-tw" : getParameterByName("language"),
+                "country": getParameterByName("country") == "" ? "tw" : getParameterByName("country"),
+                "treeId": getParameterByName("treeId") == "" ? "001" : getParameterByName("treeId"),
+                "rootTreeId": getParameterByName("rootTreeId") == "" ? null : getParameterByName("rootTreeId"),
+                "tenantId": getParameterByName("tenantId") == "" ? null : getParameterByName("tenantId")
+            },
+            "isDevelopMode": false,
+            "toolBarJson": {
+                "left": [],
+                "right": []
+            },
+            "pageId": "14d2b9bc-ea00-445a-945d-c88c326a978e",
+            "language": "zh-tw",
+            "pageCode": "Gw.WebChat.Dialog"
+        };
+
+        function getParameterByName(name) {
+            url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }//<--Henry Modified @2016/3/2
+
+        if (clientData.urlArgs.tenantId.indexOf("IL") != "-1") {
+            document.writeln("<link rel='stylesheet' type='text/css' href='" + "./styles/WebChat_il.css?20170206" + "'>");
+        }
+        else {
+            document.writeln("<link rel='stylesheet' type='text/css' href='" + "./styles/WebChat.css?20170206" + "'>");
+        }
+
+    </script>
+    <script src="./common/Config.js"></script>
+    <script src="./lib/jquery/jquery-1.11.3.js"></script>
+    <script src="./lib/jquery-ui-1.11.4/jquery-ui.js"></script>
+    <script src="./lib/jquery-file-upload-9.7.2/js/jquery.fileupload.js"></script>
+    <script src="./lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/jocket.js?20161206"></script>
+    <script src="./common/Constant.js"></script>
+    <script src="./common/Util.js"></script>
+    <script src="./common/File.js"></script>
+  	<script src='./common/WebChat.js?20170413'></script>
+    
+     <!-- <script> 
+		document.writeln("<script type='text/javascript'  src='./common/WebChat.js?"+(new Date().getTime())+"'></"+"script>"); 
+   </script>-->
+
+    <script src="./common/TextResource.js"></script>
+    <script src="./common/Survey.js?20161118"></script>
+    <script src="./common/LinkAction.js?20161028"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles/WebChat.css?20161208" />-->
+    <link rel="stylesheet" type="text/css" href="./lib/jquery-ui-1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/jquery-file-upload-9.7.2/css/jquery.fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/Bootstrap/css/bootstrap.min.css" />
+
+
+</head>
+<body>
+    <div id=Left>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <p class="navbar-brand" id="nvbarTitle">nvbarTitle</p>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <!--<li class="active"><a href="#">設定</a></li>-->
+                        <li><a href="#" id="SurveyButton"></a></li>
+                        <li><a href="#" id="AttentionButton"></a></li>
+                        <li><a href="#" id="HelpButton"></a></li>
+                        <li><a href="#" id="HotQuestionButton"></a></li>
+                        <!--style="display:none"-->
+                        <li><a href="#" action="LeaveWord" id="OnlineLeaveButton"></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" id="ExitButton"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id=LeftZone>
+            <div id=ChatZone>
+                <div id=MessageList></div>
+
+                <div Class=EditorZone id=EditorZone>
+                    <div id=ApplyAgentButton class="ButtonDisabled"></div>
+                    <div id=ImageButton class="Button IconButton ButtonDisabled"></div>
+                    <div id=TopButton></div>
+                    <div id=BackButton></div>
+                    <div id=AttachmentButton class="Button IconButton ButtonDisabled"></div>
+                    <div id=btn-recommendation class="ButtonDisabled"><span></span></div>
+                    <div id="lx-recommendation" class="modal-popup recommendation" style="display:none;">
+                        <div class="pop-head">
+                            <p class="pop-h-title"></p>
+                            <button class="close-btn"></button>
+                        </div>
+                        <div class="pop-content">
+                            <ol style="list-style: none;">
+                                <li><a href="#" id="feedback" class="questionnaire" data-s="1"></a></li>
+                                <li><a href="#" id="feedback_2" class="questionnaire" data-s="2"></a></li>
+                                <li><a href="#" id="mail" data-toggle="modal" data-target="#Mail_modal"></a></li>
+                            </ol>
+                        </div>
+                        <div class="btm-aarow"></div>
+                    </div>
+                    <textarea id=Editor value=""></textarea>
+                    <div id=SendButton></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dvP4Page">
+            <div id="dvP4PageTitle"><span id="btnP4PageClose">X</span>&nbsp;</div>
+            <iframe id="ifP4Url" src=""></iframe>
+        </div>
+
+        <div id="Feedback_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Online Chat 客戶使用滿意度調查</h4>
+                        感謝您使用華碩"客服即時通"服務，我們非常重視您此次的服務感受與建議，
+                        為了提供您更好的服務品質，耽誤您一些寶貴的時間，請您協助我們填寫下列的滿意度調查，
+                        讓我們能夠提供您更好的服務，謝謝!<br><br>
+                        <p class="q3_group">
+                            請問針對此次服務，"客服即時通"專員有解決您的問題嗎? <br>
+                            <input type="radio" name="q3" value="1"> 已解決 <br>
+                            <input type="radio" name="q3" value="2"> 未解決-客服專員的說明對您沒幫助 <br>
+                            <input type="radio" name="q3" value="3"> 未解決-機器不在手邊，無法立即嘗試 <br>
+                            <input type="radio" name="q3" value="4"> 未解決-維修相關 <br>
+                            <input type="radio" name="q3" value="5"> 未解決-產品設計、品質相關
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="Feedback_Confirm" class="confirm btn btn-primary" type="button" data-dismiss="modal">送出</button>
+                        <button class="cancel btn btn-default" type="button" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Mail_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <!--服務建議與反應 (字數上限200個)<br />-->
+                        <textarea class="user-text" id="sentmail" style="border: 1px solid #000; width: 100%; height:80px;"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="Mail_Confirm" class="confirm btn btn-primary" type="button" data-dismiss="modal"></button>
+                        <button id="Mail_Cancel" class="cancel btn btn-default" type="button" data-dismiss="modal"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id=fileupload type=file name=file>
+    <input id=imageupload type=file name=file accept="image/*">
+    <form id="loginFormId" name="loginForm" action="https://account.asus.com/signin.aspx" class="form-horizontal no_account login_account" method="post" target="_parent">
+        <input type="hidden" id="lang" name="lang" value="zh-tw" />
+        <input type="hidden" id="site" name="site" value="tw" />
+        <input type="hidden" name="AppID" value="wechat0001" />
+        <input type="hidden" name="ReturnURL" id="ReturnURL" />
+        <input id="btn_login_asus" name="btn_login_asus" type="submit" value="會員登入" style="display:none;" />
+    </form>
+    <script>
+
+        WebChat.ajax({
+            url: WebChat.CRMGatewayUrl + "openapi/web/message/getparameter",
+            data: { parameterCode: "GwLeaveWord" },
+            async: false,
+            error: "StartChatErrorMessage",
+            success: function (ret) {
+                if (ret.parameterText == "true") {
+                    document.getElementById("OnlineLeaveButton").style.display = "null";//顯示
+                } else {
+                    document.getElementById("OnlineLeaveButton").style.display = "none";//隐藏
+                }
+
+            }
+        });
+    </script>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJRLM8"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+</body>
+</html>

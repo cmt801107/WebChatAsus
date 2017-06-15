@@ -1,0 +1,85 @@
+﻿#CustInfoModalTitle
+{
+    font-size       : 27px;
+}
+
+.modal-header
+{
+    padding        :7px !important;
+}
+#CustInfoClose
+{
+	position			: absolute;
+	top					: 16px;
+	right				: 16px;
+	width				: 16px;
+	height				: 16px;
+	font-family			: Arial;
+	font-size			: 28px;
+	line-height			: 16px;
+	cursor				: default;
+}
+
+#CustInfoClose:hover
+{
+	color				: #89CB23;
+}
+
+.agentTip
+{
+    color               : #333;
+}
+
+#messageForm dd label,
+#messageForm dd input,
+#messageForm dd select
+{
+	display: block;
+}
+
+#messageForm dd input,
+#messageForm dd select
+{
+	border: 1px solid #ccc;
+	color: #333;
+	height: 30px;
+	text-indent: 6px;
+}
+
+#messageForm dd 
+{
+    padding             : 5px;
+    margin-left         :5px;
+}
+
+#messageForm dd .inline
+{
+    display            : inline;
+}
+
+#messageForm dd .short
+{
+    width              : 200px;
+}
+
+#messageForm dd .long
+{
+	width              : 100%;
+}
+
+#messageForm dd .genderLabel
+{
+	margin-left        : 30px;
+}
+
+#messageForm dd .radio
+{
+	height             : 16px;
+}
+
+#messageForm dd .radio
+{
+	position           : relative;
+	top                : -2px;
+}
+
