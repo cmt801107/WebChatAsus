@@ -7,5 +7,7 @@
     CRMGatewayUrl: location.protocol + "//icr.asus.com/gateway/",
 
     //自定義ECP網址
-    ECPUrl: location.protocol + "//icr-tw.asus.com/ecp/"
+    ECPUrl: location.protocol + "//icr-tw.asus.com/ecp/",
+
+    //test add
 }
